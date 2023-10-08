@@ -1,0 +1,49 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"rootDir": ".",
+		"sourceMap": true,
+		"declaration": false,
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"target": "es2015",
+		"module": "esnext",
+		"lib": ["es2017", "dom"],
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"baseUrl": ".",
+		"strict": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"paths": {
+			"@autism/account-management/account": ["libs/account-management/account/src/index.ts"],
+			"@autism/account-management/authorization": ["libs/account-management/authorization/src/index.ts"],
+			"@autism/account-management/profile": ["libs/account-management/profile/src/index.ts"],
+			"@autism/class-management/class": ["libs/class-management/class/src/index.ts"],
+			"@autism/communication-management/communication": ["libs/communication-management/communication/src/index.ts"],
+			"@autism/content-management/content": ["libs/content-management/content/src/index.ts"],
+			"@autism/daily-programme-management/daily-programme": [
+				"libs/daily-programme-management/daily-programme-management/src/index.ts"
+			],
+			"@autism/needs-management/need-expression": ["libs/needs-management/need-expression/src/index.ts"],
+			"@autism/note-management/note": ["libs/note-management/note/src/index.ts"],
+			"@autism/pep3-management/pep3-test": ["libs/pep3-management/pep3-test/src/index.ts"],
+			"@autism/pep3-management/plan": ["libs/pep3-management/plan/src/index.ts"],
+			"@autism/shared/decorator": ["libs/shared/decorator/src/index.ts"],
+			"@autism/shared/guard": ["libs/shared/guard/src/index.ts"],
+			"@autism/shared/interceptor": ["libs/shared/interceptor/src/index.ts"],
+			"@autism/shared/regex": ["libs/shared/regex/src/index.ts"],
+			"@autism/shared/type": ["libs/shared/type/src/index.ts"],
+			"@autism/shared/util": ["libs/shared/util/src/index.ts"],
+			"@autism/task-management/center-task": ["libs/task-management/center-task/src/index.ts"],
+			"@autism/task-management/exercise": ["libs/task-management/exercise/src/index.ts"],
+			"@autism/task-management/home-task": ["libs/task-management/home-task/src/index.ts"],
+			"@autism/time-management/time-learning": ["libs/time-management/time-learning/src/index.ts"]
+		}
+	},
+	"exclude": ["node_modules", "tmp"]
+}

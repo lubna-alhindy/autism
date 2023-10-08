@@ -1,0 +1,41 @@
+{
+	"name": "shared-guard",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/shared/guard/src",
+	"projectType": "library",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/shared/guard",
+				"tsConfig": "libs/shared/guard/tsconfig.lib.json",
+				"packageJson": "libs/shared/guard/package.json",
+				"main": "libs/shared/guard/src/index.ts",
+				"assets": ["libs/shared/guard/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/shared/guard/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"jestConfig": "libs/shared/guard/jest.config.ts",
+				"passWithNoTests": true
+			},
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			}
+		}
+	},
+	"tags": ["nest", "shared", "guard"]
+}

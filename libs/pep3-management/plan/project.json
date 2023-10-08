@@ -1,0 +1,41 @@
+{
+	"name": "pep3-management-plan",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/pep3-management/plan/src",
+	"projectType": "library",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/pep3-management/plan",
+				"tsConfig": "libs/pep3-management/plan/tsconfig.lib.json",
+				"packageJson": "libs/pep3-management/plan/package.json",
+				"main": "libs/pep3-management/plan/src/index.ts",
+				"assets": ["libs/pep3-management/plan/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/pep3-management/plan/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"jestConfig": "libs/pep3-management/plan/jest.config.ts",
+				"passWithNoTests": true
+			},
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			}
+		}
+	},
+	"tags": []
+}

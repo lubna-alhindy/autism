@@ -1,0 +1,41 @@
+{
+	"name": "needs-management-need-expression",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/needs-management/need-expression/src",
+	"projectType": "library",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/needs-management/need-expression",
+				"tsConfig": "libs/needs-management/need-expression/tsconfig.lib.json",
+				"packageJson": "libs/needs-management/need-expression/package.json",
+				"main": "libs/needs-management/need-expression/src/index.ts",
+				"assets": ["libs/needs-management/need-expression/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/needs-management/need-expression/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"jestConfig": "libs/needs-management/need-expression/jest.config.ts",
+				"passWithNoTests": true
+			},
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			}
+		}
+	},
+	"tags": ["nest", "need-expression", "needs-management"]
+}

@@ -1,0 +1,23 @@
+{
+	"development": {
+		"username": "newuser",
+		"password": "password",
+		"database": "autism",
+		"host": "127.0.0.1",
+		"dialect": "mysql"
+	},
+	"test": {
+		"username": "newuser",
+		"password": "password",
+		"database": "autism",
+		"host": "127.0.0.1",
+		"dialect": "mysql"
+	},
+	"production": {
+		"username": "newuser",
+		"password": "password",
+		"database": "autism",
+		"host": "127.0.0.1",
+		"dialect": "mysql"
+	}
+}

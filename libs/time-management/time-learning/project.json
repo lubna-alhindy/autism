@@ -1,0 +1,41 @@
+{
+	"name": "time-management-time-learning",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/time-management/time-learning/src",
+	"projectType": "library",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/time-management/time-learning",
+				"tsConfig": "libs/time-management/time-learning/tsconfig.lib.json",
+				"packageJson": "libs/time-management/time-learning/package.json",
+				"main": "libs/time-management/time-learning/src/index.ts",
+				"assets": ["libs/time-management/time-learning/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/time-management/time-learning/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"jestConfig": "libs/time-management/time-learning/jest.config.ts",
+				"passWithNoTests": true
+			},
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			}
+		}
+	},
+	"tags": ["time"]
+}

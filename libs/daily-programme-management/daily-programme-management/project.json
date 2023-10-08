@@ -1,0 +1,41 @@
+{
+	"name": "daily-programme-management-daily-programme-management",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/daily-programme-management/daily-programme-management/src",
+	"projectType": "library",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/daily-programme-management/daily-programme-management",
+				"tsConfig": "libs/daily-programme-management/daily-programme-management/tsconfig.lib.json",
+				"packageJson": "libs/daily-programme-management/daily-programme-management/package.json",
+				"main": "libs/daily-programme-management/daily-programme-management/src/index.ts",
+				"assets": ["libs/daily-programme-management/daily-programme-management/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/daily-programme-management/daily-programme-management/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"jestConfig": "libs/daily-programme-management/daily-programme-management/jest.config.ts",
+				"passWithNoTests": true
+			},
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			}
+		}
+	},
+	"tags": []
+}

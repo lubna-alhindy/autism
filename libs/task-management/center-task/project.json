@@ -1,0 +1,41 @@
+{
+	"name": "task-management-center-task",
+	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "libs/task-management/center-task/src",
+	"projectType": "library",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/task-management/center-task",
+				"tsConfig": "libs/task-management/center-task/tsconfig.lib.json",
+				"packageJson": "libs/task-management/center-task/package.json",
+				"main": "libs/task-management/center-task/src/index.ts",
+				"assets": ["libs/task-management/center-task/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/task-management/center-task/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+			"options": {
+				"jestConfig": "libs/task-management/center-task/jest.config.ts",
+				"passWithNoTests": true
+			},
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
+			}
+		}
+	},
+	"tags": ["task-management", "center-task"]
+}
